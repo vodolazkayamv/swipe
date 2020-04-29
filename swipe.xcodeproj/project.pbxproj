@@ -96,6 +96,7 @@
 		9C3608A92459CC96005FC23C /* IntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
 		9C3608B62459CD1F005FC23C /* swipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swipe-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C3608B82459CD48005FC23C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		9C96663A2459F15F004178AC /* swipe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = swipe.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +151,7 @@
 		9C36086B2459CC1C005FC23C /* swipe */ = {
 			isa = PBXGroup;
 			children = (
+				9C96663A2459F15F004178AC /* swipe.entitlements */,
 				9C3608B62459CD1F005FC23C /* swipe-Bridging-Header.h */,
 				9C36089D2459CC96005FC23C /* Features */,
 				9C36086C2459CC1C005FC23C /* AppDelegate.swift */,
@@ -559,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = swipe/swipe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82CFVC75MJ;
 				ENABLE_BITCODE = NO;
@@ -572,7 +575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = opentek.us.swipe;
+				PRODUCT_BUNDLE_IDENTIFIER = opentek.us.swipee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "swipe/swipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -584,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = swipe/swipe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82CFVC75MJ;
 				ENABLE_BITCODE = NO;
@@ -597,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = opentek.us.swipe;
+				PRODUCT_BUNDLE_IDENTIFIER = opentek.us.swipee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "swipe/swipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
