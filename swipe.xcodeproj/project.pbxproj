@@ -15,6 +15,17 @@
 		9C36087A2459CC1D005FC23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C3608782459CC1D005FC23C /* LaunchScreen.storyboard */; };
 		9C3608852459CC1D005FC23C /* swipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3608842459CC1D005FC23C /* swipeTests.swift */; };
 		9C3608902459CC1D005FC23C /* swipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C36088F2459CC1D005FC23C /* swipeUITests.swift */; };
+		9C3608AB2459CC96005FC23C /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C3608A22459CC96005FC23C /* MobileRTCResources.bundle */; };
+		9C3608AD2459CC96005FC23C /* ZoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3608A42459CC96005FC23C /* ZoomService.swift */; };
+		9C3608AE2459CC96005FC23C /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3608A72459CC96005FC23C /* IntroViewController.m */; };
+		9C3608AF2459CC96005FC23C /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3608A92459CC96005FC23C /* IntroViewController.xib */; };
+		9C3608B92459CD48005FC23C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3608B82459CD48005FC23C /* Logger.swift */; };
+		9C3608BB2459CF7C005FC23C /* MobileRTCResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3608A22459CC96005FC23C /* MobileRTCResources.bundle */; };
+		9C9666322459CFA7004178AC /* MobileRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3608A32459CC96005FC23C /* MobileRTC.framework */; };
+		9C9666332459CFA7004178AC /* MobileRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3608A32459CC96005FC23C /* MobileRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C9666352459CFA8004178AC /* MobileRTCResources.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = 9C3608A22459CC96005FC23C /* MobileRTCResources.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9C9666372459CFAA004178AC /* MobileRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3608A12459CC96005FC23C /* MobileRTCScreenShare.framework */; };
+		9C9666382459CFAA004178AC /* MobileRTCScreenShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C3608A12459CC96005FC23C /* MobileRTCScreenShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9C9666342459CFA7004178AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C9666382459CFAA004178AC /* MobileRTCScreenShare.framework in Embed Frameworks */,
+				9C9666332459CFA7004178AC /* MobileRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9666362459CFA9004178AC /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9C9666352459CFA8004178AC /* MobileRTCResources.bundle in Embed PlugIns */,
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9C3608692459CC1C005FC23C /* swipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C36086C2459CC1C005FC23C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +86,16 @@
 		9C36088B2459CC1D005FC23C /* swipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C36088F2459CC1D005FC23C /* swipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipeUITests.swift; sourceTree = "<group>"; };
 		9C3608912459CC1D005FC23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C36089F2459CC96005FC23C /* Zoom-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Zoom-Header.h"; sourceTree = "<group>"; };
+		9C3608A12459CC96005FC23C /* MobileRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobileRTCScreenShare.framework; sourceTree = "<group>"; };
+		9C3608A22459CC96005FC23C /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MobileRTCResources.bundle; sourceTree = "<group>"; };
+		9C3608A32459CC96005FC23C /* MobileRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobileRTC.framework; sourceTree = "<group>"; };
+		9C3608A42459CC96005FC23C /* ZoomService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomService.swift; sourceTree = "<group>"; };
+		9C3608A72459CC96005FC23C /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		9C3608A82459CC96005FC23C /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		9C3608A92459CC96005FC23C /* IntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
+		9C3608B62459CD1F005FC23C /* swipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swipe-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C3608B82459CD48005FC23C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3608BB2459CF7C005FC23C /* MobileRTCResources.bundle in Frameworks */,
+				9C9666322459CFA7004178AC /* MobileRTC.framework in Frameworks */,
+				9C9666372459CFAA004178AC /* MobileRTCScreenShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +133,7 @@
 				9C3608832459CC1D005FC23C /* swipeTests */,
 				9C36088E2459CC1D005FC23C /* swipeUITests */,
 				9C36086A2459CC1C005FC23C /* Products */,
+				9C3608BA2459CF7C005FC23C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +150,8 @@
 		9C36086B2459CC1C005FC23C /* swipe */ = {
 			isa = PBXGroup;
 			children = (
+				9C3608B62459CD1F005FC23C /* swipe-Bridging-Header.h */,
+				9C36089D2459CC96005FC23C /* Features */,
 				9C36086C2459CC1C005FC23C /* AppDelegate.swift */,
 				9C36086E2459CC1C005FC23C /* ViewController.swift */,
 				9C3608702459CC1C005FC23C /* Main.storyboard */,
@@ -106,6 +159,7 @@
 				9C3608782459CC1D005FC23C /* LaunchScreen.storyboard */,
 				9C36087B2459CC1D005FC23C /* Info.plist */,
 				9C3608732459CC1C005FC23C /* swipe.xcdatamodeld */,
+				9C3608B72459CD48005FC23C /* Utility */,
 			);
 			path = swipe;
 			sourceTree = "<group>";
@@ -128,6 +182,68 @@
 			path = swipeUITests;
 			sourceTree = "<group>";
 		};
+		9C36089D2459CC96005FC23C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9C36089E2459CC96005FC23C /* ZOOM */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9C36089E2459CC96005FC23C /* ZOOM */ = {
+			isa = PBXGroup;
+			children = (
+				9C36089F2459CC96005FC23C /* Zoom-Header.h */,
+				9C3608A02459CC96005FC23C /* lib */,
+				9C3608A42459CC96005FC23C /* ZoomService.swift */,
+				9C3608A52459CC96005FC23C /* Controllers */,
+			);
+			path = ZOOM;
+			sourceTree = "<group>";
+		};
+		9C3608A02459CC96005FC23C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9C3608A12459CC96005FC23C /* MobileRTCScreenShare.framework */,
+				9C3608A22459CC96005FC23C /* MobileRTCResources.bundle */,
+				9C3608A32459CC96005FC23C /* MobileRTC.framework */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		9C3608A52459CC96005FC23C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C3608A62459CC96005FC23C /* Intro */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C3608A62459CC96005FC23C /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				9C3608A72459CC96005FC23C /* IntroViewController.m */,
+				9C3608A82459CC96005FC23C /* IntroViewController.h */,
+				9C3608A92459CC96005FC23C /* IntroViewController.xib */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		9C3608B72459CD48005FC23C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9C3608B82459CD48005FC23C /* Logger.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9C3608BA2459CF7C005FC23C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +254,8 @@
 				9C3608652459CC1C005FC23C /* Sources */,
 				9C3608662459CC1C005FC23C /* Frameworks */,
 				9C3608672459CC1C005FC23C /* Resources */,
+				9C9666342459CFA7004178AC /* Embed Frameworks */,
+				9C9666362459CFA9004178AC /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
@@ -233,6 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C36087A2459CC1D005FC23C /* LaunchScreen.storyboard in Resources */,
+				9C3608AF2459CC96005FC23C /* IntroViewController.xib in Resources */,
+				9C3608AB2459CC96005FC23C /* MobileRTCResources.bundle in Resources */,
 				9C3608772459CC1D005FC23C /* Assets.xcassets in Resources */,
 				9C3608722459CC1C005FC23C /* Main.storyboard in Resources */,
 			);
@@ -260,8 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C36086F2459CC1C005FC23C /* ViewController.swift in Sources */,
+				9C3608B92459CD48005FC23C /* Logger.swift in Sources */,
 				9C36086D2459CC1C005FC23C /* AppDelegate.swift in Sources */,
+				9C3608AD2459CC96005FC23C /* ZoomService.swift in Sources */,
 				9C3608752459CC1C005FC23C /* swipe.xcdatamodeld in Sources */,
+				9C3608AE2459CC96005FC23C /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,13 +561,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82CFVC75MJ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/swipe/Features/ZOOM/lib",
+				);
 				INFOPLIST_FILE = swipe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = opentek.us.swipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swipe/swipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -456,13 +586,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82CFVC75MJ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/swipe/Features/ZOOM/lib",
+				);
 				INFOPLIST_FILE = swipe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = opentek.us.swipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swipe/swipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
