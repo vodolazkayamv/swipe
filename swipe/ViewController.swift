@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,10 +23,39 @@ class ViewController: UIViewController {
         joinButton.layer.cornerRadius = 5
         joinButton.frame = CGRect(x: view.center.x - 75, y: view.center.y - 25 + 60, width: 150, height: 50)
         view.addSubview(joinButton)
+        
+        let loginButton = UIButton()
+        loginButton.backgroundColor = .black
+        loginButton.setTitle("Login to ZOOM", for: .normal)
+        loginButton.addTarget(self, action: #selector(loginToZOOM), for: .touchUpInside)
+        loginButton.layer.cornerRadius = 5
+        loginButton.frame = CGRect(x: view.center.x - 75, y: view.center.y - 25 - 60, width: 150, height: 50)
+        view.addSubview(loginButton)
+        
+        let scheduleButton = UIButton()
+        scheduleButton.backgroundColor = .black
+        scheduleButton.setTitle("Schedule Meeting", for: .normal)
+        scheduleButton.addTarget(self, action: #selector(scheduleMeeting), for: .touchUpInside)
+        scheduleButton.layer.cornerRadius = 5
+        scheduleButton.frame = CGRect(x: view.center.x - 75, y: view.center.y - 25 + 120, width: 150, height: 50)
+        view.addSubview(scheduleButton)
+        
     }
-
-
+    
+    
+    @objc func loginToZOOM() {
+        ZoomService.sharedInstance.login(email: "zapdosrye@gmail.com", password: "London.Test1")
+    }
+    
+    @objc func scheduleMeeting() {
+        let meeting = ZoomMeeting.init(number: 0, password: "123", topic: "Testing meeting scheduling", startTime: Date.init(), timeZone: TimeZone.current, durationInMinutes: 60)
+        ZoomService.sharedInstance.scheduleMeeting(topic: "Testing meeting scheduling", startTime: Date.init(), durationInMinutes: TimeInterval.init(60))
+        
+        
+    }
+    
     @objc func joinMeeting() {
+        
         //Step : 1
         let alert = UIAlertController(title: "Great Title", message: "Please input something", preferredStyle: UIAlertController.Style.alert )
         //Step : 2
@@ -40,7 +69,7 @@ class ViewController: UIViewController {
             } else {
                 print("TF 1 is Empty...")
             }
-
+            
             if textField2.text != "" {
                 print(textField2.text!)
                 print("TF 2 : \(textField2.text!)")
@@ -63,12 +92,12 @@ class ViewController: UIViewController {
         //Step : 3
         //For first TF
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter your first name"
+            textField.placeholder = "Meeting identificator"
             textField.textColor = .red
         }
         //For second TF
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter your last name"
+            textField.placeholder = "Password"
             textField.textColor = .blue
         }
 
@@ -85,6 +114,6 @@ class ViewController: UIViewController {
         alert.addAction(save)
         
         self.present(alert, animated:true, completion: nil)
+        
     }
 }
-

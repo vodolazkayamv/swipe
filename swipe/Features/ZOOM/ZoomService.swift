@@ -36,6 +36,8 @@ public struct ZoomMeeting {
 class ZoomService: NSObject, MobileRTCAuthDelegate {
     
     static let sharedInstance = ZoomService()
+
+    var currentUserEmail = "nAn"
     
     var isAPIAuthenticated = false
     var isUserAuthenticated = false
@@ -62,6 +64,8 @@ class ZoomService: NSObject, MobileRTCAuthDelegate {
         authService.clientKey = ZoomAPI.appKey
         authService.clientSecret = ZoomAPI.appSecret
         authService.sdkAuth()
+        
+        
     }
     
     // Handled by MobileRTCAuthDelegate, returns result of authenticateSDK function call.
@@ -138,8 +142,18 @@ extension ZoomService: MobileRTCPremeetingDelegate {
     
     // Authenticate user as a Zoom member.
     func login(email: String, password: String) {
-        guard isAPIAuthenticated, let authService = MobileRTC.shared().getAuthService() else { return }
+        guard isAPIAuthenticated else {
+            Logger.error("API is not authenticated")
+            return
+        }
+        guard let authService = MobileRTC.shared().getAuthService() else {
+            Logger.error("failed to get Auth Service")
+            return
+        }
         authService.login(withEmail: email, password: password, rememberMe: true)
+        currentUserEmail = email
+        guard let preMeetingService = MobileRTC.shared().getPreMeetingService() else { return }
+        preMeetingService.delegate = self
     }
     
     // Handled by MobileRTCPremeetingDelegate, returns result of login function call.
@@ -149,11 +163,13 @@ extension ZoomService: MobileRTCPremeetingDelegate {
             return
         }
         
+        guard let authService = MobileRTC.shared().getAuthService() else {
+            Logger.error("failed to get Auth Service")
+            return
+        }
+        
+        currentUserEmail = authService.getAccountInfo()?.getEmailAddress() as! String
         isUserAuthenticated = true
-        
-        guard let preMeetingService = MobileRTC.shared().getPreMeetingService() else { return }
-        preMeetingService.delegate = self
-        
         Logger.log("Zoom (User): Login task completed.")
     }
     
@@ -238,13 +254,27 @@ extension ZoomService: MobileRTCPremeetingDelegate {
     
     // Schedule a Zoom meeting as a Zoom member.
     func scheduleMeeting(topic: String, startTime: Date, timeZone: TimeZone = NSTimeZone.local, durationInMinutes: TimeInterval) {
-        guard isUserAuthenticated, let preMeetingService = MobileRTC.shared().getPreMeetingService(), let meeting = preMeetingService.createMeetingItem() else { return }
+        guard isUserAuthenticated else {
+            Logger.error("user is not authenticated")
+            return
+        }
+        guard let preMeetingService = MobileRTC.shared().getPreMeetingService() else {
+            Logger.error("failed creating preMeetingService")
+            return
+        }
+        guard let meeting = preMeetingService.createMeetingItem() else {
+            Logger.error("failed creating meeting item")
+            return
+        }
+        
+        preMeetingService.delegate = self
         meeting.setMeetingTopic(topic)
         meeting.setStartTime(startTime)
         meeting.setTimeZoneID(timeZone.abbreviation() ?? "")
         meeting.setDurationInMinutes(UInt(durationInMinutes))
         
-        preMeetingService.scheduleMeeting(meeting, withScheduleFor: "userEmail")
+        
+        preMeetingService.scheduleMeeting(meeting, withScheduleFor: currentUserEmail)
         preMeetingService.destroy(meeting)
     }
     
